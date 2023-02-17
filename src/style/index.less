@@ -1,0 +1,67 @@
+@primaryBg:#7e8a8a;
+@borderColor: #24ce15;
+@snakeColor: #e80944;
+@borderWidth:1px;
+*{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+  //display: flex;
+}
+#snakeContainer{
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  width:600px;
+  height: 600px;
+  border:1px solid @borderColor;
+  margin: auto;
+  background:@primaryBg;
+}
+.snakeMoveArea{
+  width: 100%;
+  height:500px;
+  position: relative;
+}
+#snake{
+  &>div{
+    width: 10px;
+    height: 10px;
+    background-color: @snakeColor;
+    border-radius: 3px;
+    border: 1px solid @primaryBg;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.controller{
+  display: flex;
+  align-items: center;
+  flex: auto;
+  margin-top: auto;
+  justify-content: space-around;
+  //box-sizing:border-box;
+  border-top:solid @borderWidth @borderColor;
+}
+#snakeHead{
+  background: url("/public/snake.svg") no-repeat center!important ;
+  background-color: @primaryBg !important;
+  border:none !important;
+  z-index: 10 !important;
+}
+#food{
+  background: url("/public/food.svg");
+  width: 10px;
+  height: 10px;
+  position: absolute;
+
+}
+
+
